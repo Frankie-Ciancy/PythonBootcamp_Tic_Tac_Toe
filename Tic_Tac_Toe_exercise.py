@@ -1,10 +1,3 @@
-#give instructions (including reference)
-# print board
-# get input (1-9, although I like it better A1:C3
-# assign input to sign (alternate)
-# assign input to position
-
-
 previous_placements = []
 
 first_row = ["_", "_", "_"]
@@ -17,6 +10,7 @@ board = [first_row, second_row, third_row]
 first_row_reference = ["1", "2", "3"]
 second_row_reference = ["4", "5", "6"]
 third_row_reference = ["7", "8", "9"]
+
 
 def get_player_input():
     choice = ""
@@ -40,15 +34,18 @@ def get_player_input():
     previous_placements.append(choice)
     return int(choice)
 
+
 def print_board():
     print(first_row)
     print(second_row)
     print(third_row)
 
+
 def print_reference():
     print(first_row_reference)
     print(second_row_reference)
     print(third_row_reference)
+
 
 def update_board(symbol):
     choice = get_player_input()
@@ -75,6 +72,7 @@ def assign_symbol(turn_number):
         symbol = "0"
     return symbol
 
+
 def is_game_won():
     winning_cross = ["X", "X", "X"]
     winning_circles = ["0", "0", "0"]
@@ -98,33 +96,6 @@ def announce_win(symbol):
     print(f'Congrats! {symbol} won!')
     exit_the_game()
 
-# def check_if_won_horizontal():
-#     winning_cross = ["X", "X", "X"]
-#     winning_circles = ["0", "0", "0"]
-#     for row_list in board:
-#         if row_list == winning_cross:
-#             print("cross won!")
-#             exit_the_game()
-#         elif row_list == winning_circles:
-#             print("congrats! 0 won!")
-#             exit_the_game()
-#
-# def check_if_won_diagonal():
-#     rows = first_row + second_row + third_row
-#     if rows[2] == rows[4] == rows[6] or rows[0] == rows[4] == rows[8]:
-#         print(f'Congrats! {rows[4]} wins the game!')
-#         exit_the_game()
-#
-# def check_if_won_vertical():
-#     rows = first_row + second_row + third_row
-#     for n in range(0,3):
-#         if rows[n] == rows[n+3] == rows[n+6]:
-#             if rows[n] == "X":
-#                 print("congrats! X won!")
-#                 exit_the_game()
-#             if rows[n] == "0":
-#                 print("congrats! 0 won!")
-#                 exit_the_game()
 
 def reset_the_table():
     global previous_placements, first_row, second_row, third_row
