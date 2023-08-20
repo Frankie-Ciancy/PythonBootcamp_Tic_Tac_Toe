@@ -5,8 +5,6 @@ second_row = ["_", "_", "_"]
 third_row = ["_", "_", "_"]
 board = [first_row, second_row, third_row]
 
-# print(board)
-
 first_row_reference = ["1", "2", "3"]
 second_row_reference = ["4", "5", "6"]
 third_row_reference = ["7", "8", "9"]
